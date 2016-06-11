@@ -24,7 +24,10 @@ RUN make && make install
 
 RUN adduser --system --disabled-password --disabled-login mosquitto
 
+WORKDIR /etc/mosquitto
 VOLUME /etc/mosquitto
 
 EXPOSE 1883
+EXPOSE 8883
+
 CMD /usr/bin/sudo -u mosquitto /usr/local/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
