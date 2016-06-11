@@ -27,4 +27,4 @@ RUN adduser --system --disabled-password --disabled-login mosquitto
 VOLUME /etc/mosquitto
 
 EXPOSE 1883
-CMD /usr/bin/sudo -u mosquitto /usr/local/sbin/mosquitto
+CMD /usr/bin/sudo -u mosquitto /usr/local/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
